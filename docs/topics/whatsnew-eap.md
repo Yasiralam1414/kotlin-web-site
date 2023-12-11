@@ -49,6 +49,10 @@ If you encounter any of the problems mentioned above, you can take the following
        }
    }
    ```
+  > If you configure language and API versions for specific tasks, these values will override the values set by the `compilerOptions` extension. 
+  > In this case, language and API versions should not be higher than 1.9.
+  >
+  {type="note"}
 
 * Update the Gradle version in your project to 8.3 when it becomes available.
 
