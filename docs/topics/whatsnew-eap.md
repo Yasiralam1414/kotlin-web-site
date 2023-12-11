@@ -10,7 +10,7 @@ _[Released: %kotlinEapReleaseDate%](eap.md#build-details)_
 {type="note"}
 
 The Kotlin %kotlinEapVersion% release is out! It mostly covers stabilization of the [new Kotlin K2 compiler](#kotlin-k2-compiler),
-which reached its Beta status for all targets since 1.9.20. In addition, there is also a change in the way [Gradle stores Kotlin data](#new-directory-for-kotlin-data-in-gradle-projects).
+which reached its Beta status for all targets since 1.9.20. In addition, there is a change in the way that the [Kotlin Gradle plugin stores Kotlin data](#new-directory-for-kotlin-data-in-gradle-projects).
 
 ## IDE support
 
@@ -94,27 +94,27 @@ We would appreciate any feedback you may have!
 * 
 ## New directory for Kotlin data in Gradle projects
 
+> With this change, you may need to add the `.kotlin` directory to your project's `.gitignore` file.
+>
+{type="warning"}
+
 In Kotlin 1.8.20, the Kotlin Gradle plugin started to store its data in the Gradle project cache directory: `<project-root-directory>/.gradle/kotlin`.
 However, the `.gradle` directory is reserved for Gradle only, and as a result it's not future-proof. To solve this, in 
 Kotlin 2.0.0-Beta2 we store Kotlin data in your `<project-root-directory>/.kotlin` by default. We will continue to store
 some data in `.gradle/kotlin` directory for backward compatibility.
 
-> With this change, you may need to add the `.kotlin` directory to your project's `.gitignore` file.
->
-{type="warning"}
-
 There are new Gradle properties so that you can configure a directory of your choice and more:
 
-| Gradle property                                     | Description                                                                                                  |
-|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `kotlin.project.persistent.dir`                     | Configures the location where your project-level data is stored. Default: `<project-root-directory>/.kotlin` |
-| `kotlin.project.persistent.dir.gradle.disableWrite` | A boolean value that controls whether writing data to the `.gradle` directory is disabled. Default: false    |
+| Gradle property                                     | Description                                                                                                      |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `kotlin.project.persistent.dir`                     | Configures the location where your project-level data is stored. Default: `<project-root-directory>/.kotlin`     |
+| `kotlin.project.persistent.dir.gradle.disableWrite` | A boolean value that controls whether writing Kotlin data to the `.gradle` directory is disabled. Default: false |
 
 Add these properties to the `gradle.properties` file in your projects for them to take effect.
 
 ## What to expect from upcoming Kotlin EAP releases
 
-The upcoming 2.0.0-Beta3 release will introduce increased stability to the K2 compiler.
+The upcoming 2.0.0-Beta3 release will increase stability of the K2 compiler.
 If you are currently using K2 in your project, 
 we encourage you to stay updated on Kotlin releases and experiment with the updated K2 compiler. 
 [Share your feedback on using Kotlin K2](#leave-your-feedback-on-the-new-k2-compiler).
@@ -125,10 +125,6 @@ we encourage you to stay updated on Kotlin releases and experiment with the upda
 > You can start using the K2 compiler in production starting from **Kotlin 2.0.0-RC1**.
 >
 {type="warning"}
-
-
-
-
 
 ## How to update to Kotlin %kotlinEapVersion%
 

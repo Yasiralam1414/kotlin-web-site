@@ -43,7 +43,7 @@ check [our instructions on how to configure your build to support this version](
     </tr>
     <tr>
         <td><strong>2.0.0-Beta2</strong>
-            <p>Released: <strong>December 12, 2023</strong></p>
+            <p>Released: <strong>December 13, 2023</strong></p>
             <p><a href="https://github.com/JetBrains/kotlin/releases/tag/v2.0.0-Beta2" target="_blank">Release on GitHub</a></p>
         </td>
         <td>
